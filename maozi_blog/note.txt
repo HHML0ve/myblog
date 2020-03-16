@@ -1,0 +1,49 @@
+1) 新建一个项目：
+
+django-admin.py startproject project-name
+
+在 windows 上如果报错，尝试用 django-admin 代替 django-admin.py 。
+
+2) 新建一个APP：
+
+python manage.py startapp app-name
+
+或
+
+django-admin.py startapp app-name
+
+一般一个项目有多个app, 当然通用的app也可以在多个项目中使用。
+
+3) 启动服务器：
+
+python manage.py runserver 0.0.0.0:8000
+
+或
+
+python manage.py runserver
+
+前者让其它电脑可连接到服务器，监听机器上所有ip的8000端口，访问时用电脑的ip代替 127.0.0.1
+（8000为端口号，如果不说明，则端口号默认为8000）；后者在本电脑访问服务器，访问时ip为127.0.0.1。
+
+介绍app中的目录结构
+1 migrations
+    数据移植（迁移）模块，文件夹下的内容由 Django 自动生成的
+1 admin
+    当前应用的后台管理系统配置
+    Django 其一的特点是有自己的后台的管理系统，所以每个应用下都有各自的配置文件
+2 apps
+    当前应用的一些配置
+3 models
+    数据模型模块，创建数据表在这个模块中创建的。
+    使用 OMR 框架，类似于 MVC 结构中的 Models (模型)
+4 tests
+    自动化测试模块
+    Django 给我们提供了自动化测试功能，我们在这里编写相应的代码即可针对性进行自动化测试
+    在这里编写测试脚本（语句）
+5 views
+    非常重要的文件，我们每接收一个请求都要响应，响应什么东西，怎么响应都是在这里完成的，处理之后再返回回去。
+    执行响应的代码所在的模块
+    代码逻辑处理的主要地点
+    项目中大部分代码都是在这里编写
+
+python 命令都可以替换成 py
